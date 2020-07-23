@@ -85,13 +85,13 @@ h1500=mp.HDHP1500
 h3000=mp.HDHP3000
 h5000=mp.HDHP5000
 
-office_visits = 3
-specialist_visit = 24
+office_visits = 0
+specialist_visit = 0
 virtual_visit = 0
 urgent_care = 0
 emergency_room = 0
 outpatient_surgery = 0
-hospital_visit = 1
+hospital_visit = 0
 
 ov_price = 300
 sv_price = 300
@@ -265,61 +265,61 @@ def cosv_action(text):
 
 
 npcv_box = pl.axes([0.05, 0.05, 0.05, 0.02])
-npcv = TextBox(npcv_box, '#Office visits', initial='2')
+npcv = TextBox(npcv_box, '#Office visits', initial='0')
 npcv.on_submit(npv_action)
 
 nscv_box = pl.axes([0.19, 0.05, 0.05, 0.02])
-nscv = TextBox(nscv_box, '#Specialist visit', initial='2')
+nscv = TextBox(nscv_box, '#Specialist visit', initial='0')
 nscv.on_submit(nsv_action)
 
 nvcv_box = pl.axes([0.33, 0.05, 0.05, 0.02])
-nvcv = TextBox(nvcv_box, '#Virtual', initial='2')
+nvcv = TextBox(nvcv_box, '#Virtual', initial='0')
 nvcv.on_submit(nvv_action)
 
 nucv_box = pl.axes([0.475,0.05, 0.05, 0.02])
-nucv = TextBox(nucv_box, '#urgent care', initial='2')
+nucv = TextBox(nucv_box, '#urgent care', initial='0')
 nucv.on_submit(nucv_action)
 
 nerv_box = pl.axes([0.61,0.05, 0.05, 0.02])
-nerv = TextBox(nerv_box, '#ER visits', initial='2')
+nerv = TextBox(nerv_box, '#ER visits', initial='0')
 nerv.on_submit(nerv_action)
 
 nosv_box = pl.axes([0.758,0.05, 0.05, 0.02])
-nosv = TextBox(nosv_box, '#outpatient surg', initial='2')
+nosv = TextBox(nosv_box, '#outpatient surg', initial='0')
 nosv.on_submit(nosv_action)
 
 nihv_box = pl.axes([0.9,0.05, 0.05, 0.02])
-nihv = TextBox(nihv_box, '#hospital stay', initial='2')
+nihv = TextBox(nihv_box, '#hospital stay', initial='0')
 nihv.on_submit(nhv_action)
 
 ################################################
 
 pcc_box = pl.axes([0.05, 0.03, 0.05, 0.02])
-pcc = TextBox(pcc_box, 'office $', initial='300')
+pcc = TextBox(pcc_box, 'office $', initial=str(ov_price))
 pcc.on_submit(cpv_action)
 
 scc_box = pl.axes([0.19, 0.03, 0.05, 0.02])
-scc = TextBox(scc_box, 'specialist $', initial='300')
+scc = TextBox(scc_box, 'specialist $', initial=str(sv_price))
 scc.on_submit(csv_action)
 
 vcc_box = pl.axes([0.33, 0.03, 0.05, 0.02])
-vcc = TextBox(vcc_box, 'vitrual $', initial='200')
+vcc = TextBox(vcc_box, 'vitrual $', initial=str(vv_price))
 vcc.on_submit(cvv_action)
 
 ucc_box = pl.axes([0.475,0.03, 0.05, 0.02])
-ucc = TextBox(ucc_box, 'urgent care $', initial='600')
+ucc = TextBox(ucc_box, 'urgent care $', initial=str(uc_price))
 ucc.on_submit(cucv_action)
 
 erc_box = pl.axes([0.616,0.03, 0.05, 0.02])
-erc = TextBox(erc_box, 'ER $', initial='2000')
+erc = TextBox(erc_box, 'ER $', initial=str(er_price))
 erc.on_submit(cerv_action)
 
 osc_box = pl.axes([0.758,0.03, 0.05, 0.02])
-osc = TextBox(osc_box, 'outpatient surg $', initial='6000')
+osc = TextBox(osc_box, 'outpatient surg $', initial=str(os_price))
 osc.on_submit(cosv_action)
 
 ihc_box = pl.axes([0.9,0.03, 0.05, 0.02])
-ihc = TextBox(ihc_box, 'Hospital $', initial='10000')
+ihc = TextBox(ihc_box, 'Hospital $', initial=str(hv_price))
 ihc.on_submit(chv_action)
 
 
